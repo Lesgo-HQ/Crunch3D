@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+.venv/
+.env
+
+# Node
+node_modules/
+dist/
+
+# Uploads & processed files
+model/uploads/
+model/processed/
+model/learning/training_data/
+model/training/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+model/learning/checkpoints/crunch3d_gnn_model_meta.json
+model/learning/checkpoints/crunch3d_gnn_model.pt
+model/training/optimization_events.jsonl
+model/data/usage.db-shm
+model/data/usage.db-wal
+
+# Local package cache
+.pnpm-store/
+
+# Local runtime and test artifacts
+model/data/
+.pytest_cache/
+*.bundle

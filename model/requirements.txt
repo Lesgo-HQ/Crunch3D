@@ -1,0 +1,10 @@
+fastapi==0.115.6
+python-dotenv>=1.0.0
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pymeshlab==2025.7.post1
+trimesh==4.5.3
+Pillow>=10.0
+numpy>=2.0.0
+scipy>=1.14.0
+pydantic>=2.10.0
