@@ -12,9 +12,9 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/Lesgo-HQ/Crunch3D/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424" /></a>
-  <a href="https://github.com/Lesgo-HQ/Crunch3D/forks"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424" /></a>
-  <a href="https://github.com/Lesgo-HQ/Crunch3D/issues"><img alt="Open issues" src="https://img.shields.io/github/issues/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424" /></a>
+  <a href="https://github.com/Lesgo-HQ/Crunch3D/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
+  <a href="https://github.com/Lesgo-HQ/Crunch3D/forks"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
+  <a href="https://github.com/Lesgo-HQ/Crunch3D/issues"><img alt="Open issues" src="https://img.shields.io/github/issues/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
 </p>
 
 <details>
@@ -193,9 +193,9 @@ For a change, open a branch, keep the patch focused, run the checks above, and s
 These badges read live repository data. Their values reflect this repository, including its fresh history, rather than earlier development elsewhere.
 
 <p>
-  <a href="https://github.com/Lesgo-HQ/Crunch3D/commits/main/"><img alt="Latest commit" src="https://img.shields.io/github/last-commit/Lesgo-HQ/Crunch3D?style=flat-square&amp;color=F26522&amp;labelColor=242424" /></a>
-  <a href="https://github.com/Lesgo-HQ/Crunch3D/activity"><img alt="Monthly commit activity" src="https://img.shields.io/github/commit-activity/m/Lesgo-HQ/Crunch3D?style=flat-square&amp;color=F26522&amp;labelColor=242424" /></a>
-  <a href="https://github.com/Lesgo-HQ/Crunch3D/pulls"><img alt="Open pull requests" src="https://img.shields.io/github/issues-pr/Lesgo-HQ/Crunch3D?style=flat-square&amp;color=F26522&amp;labelColor=242424" /></a>
+  <a href="https://github.com/Lesgo-HQ/Crunch3D/commits/main/"><img alt="Latest commit" src="https://img.shields.io/github/last-commit/Lesgo-HQ/Crunch3D?style=flat-square&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
+  <a href="https://github.com/Lesgo-HQ/Crunch3D/activity"><img alt="Monthly commit activity" src="https://img.shields.io/github/commit-activity/m/Lesgo-HQ/Crunch3D?style=flat-square&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
+  <a href="https://github.com/Lesgo-HQ/Crunch3D/pulls"><img alt="Open pull requests" src="https://img.shields.io/github/issues-pr/Lesgo-HQ/Crunch3D?style=flat-square&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
 </p>
 
 [Browse activity](https://github.com/Lesgo-HQ/Crunch3D/activity) · [Report an issue](https://github.com/Lesgo-HQ/Crunch3D/issues) · [Star the project](https://github.com/Lesgo-HQ/Crunch3D/stargazers)
