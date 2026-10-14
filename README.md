@@ -2,10 +2,9 @@
 
 <div align="center">
   <img src="./assets/branding/fulllogo.jpeg" alt="Crunch3D full logo" width="900" />
-  <h1>Crunch3D Community</h1>
+  <h1>Crunch3D</h1>
   <p>Fewer polygons. More room to build.</p>
   <p>
-    <a href="https://crunch3d.vercel.app/">Website</a> ·
     <a href="#getting-started">Get started</a> ·
     <a href="#system-architecture">Architecture</a> ·
     <a href="#team">Meet the team</a>
@@ -26,7 +25,6 @@
     <li><a href="#system-architecture">System architecture</a></li>
     <li><a href="#getting-started">Getting started</a></li>
     <li><a href="#usage">Usage and local API</a></li>
-    <li><a href="#community-and-pro">Community and Pro</a></li>
     <li><a href="#limitations">Limitations</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#repository-activity">Repository activity</a></li>
@@ -40,7 +38,7 @@
 
 A mesh can look great and still be too heavy for a game, a website, or a real-time scene. Crunch3D helps you reduce that weight, inspect what changed, and decide whether the result is right for your project.
 
-Community runs on your own machine. You bring the mesh, choose a face budget, and get a single optimized result. No account, watermark, daily download limit, or background training on your files.
+Crunch3D runs on your own machine. You bring the mesh, choose a face budget, and get a single optimized result. No account, watermark, daily download limit, or background training on your files.
 
 ### What you can do
 
@@ -76,18 +74,20 @@ Community runs on your own machine. You bring the mesh, choose a face budget, an
 
 ### System architecture
 
-<img src="./assets/diagrams/architecture.svg" alt="Community architecture: local browser sends a mesh to FastAPI; a separate worker runs curvature-weighted QEM and a quality retry loop; local files return to the viewer and download endpoint." width="100%" />
+<img src="./assets/diagrams/architecture.svg" alt="Local architecture: local browser sends a mesh to FastAPI; a separate worker runs curvature-weighted QEM and a quality retry loop; local files return to the viewer and download endpoint." width="100%" />
 
 1. The browser sends a mesh to the local FastAPI server.
 2. The server validates the upload and stores its files and job metadata locally.
 3. Optimization runs in a separate process. Curvature scores weight the QEM simplifier; quality checks can retry with a higher face target.
-4. The API returns statistics, a preview, and the downloadable result. Nothing is sent to a hosted Crunch3D service by this local pipeline.
+4. The API returns statistics, a preview, and the downloadable result to the same browser.
+
+The browser, API, worker, and files all live on your computer. The browser talks to `127.0.0.1:8000` through Vite’s local proxy; there is no remote processing service in this architecture.
 
 ```text
 Crunch3D/
 ├── assets/              # Brand images and architecture diagram
 ├── model/
-│   ├── api/             # Community endpoints and request schemas
+│   ├── api/             # Local endpoints and request schemas
 │   ├── engine/          # QEM optimization and quality guard
 │   ├── importance/      # Curvature-only importance scores
 │   ├── services/        # Local file handling and mesh analysis
@@ -131,13 +131,15 @@ Open **http://localhost:5173**. Vite forwards `/api` requests to the backend on 
 
 | Setting | Default | Purpose |
 | :--- | :--- | :--- |
-| `MAX_FILE_SIZE_MB` | `50` | Configurable upload safeguard for your hardware, not a paid-plan limit |
+| `MAX_FILE_SIZE_MB` | `0` (unlimited) | Optional local upload cap in MB. Leave at `0` for no application size limit |
 | `CORS_ORIGINS` | Localhost ports 5173 and 3000 | Browser origins allowed to call the API |
 | `VITE_API_BASE_URL` | Same-origin `/api` | Optional frontend override in `web/.env.local` |
 
 Uploads and results live in `model/uploads/` and `model/processed/`. They stay there until you delete them, and Git ignores both folders. `DELETE /api/job/{job_id}` removes a job and its files.
 
-Keep the backend bound to localhost. Community does not include multi-user authentication or tenant isolation.
+There is no default file-size cap. Available RAM, disk space, and processing time still determine what your machine can handle. Set a positive `MAX_FILE_SIZE_MB` only if you want a local safeguard.
+
+Keep the backend bound to localhost. Crunch3D does not include multi-user authentication or tenant isolation.
 
 ## Usage
 
@@ -172,20 +174,6 @@ pnpm --dir web build
 
 The tests use tiny generated meshes. You do not need a large model collection to contribute.
 
-## Community and Pro
-
-| Capability | Community | Pro direction |
-| :--- | :--- | :--- |
-| Local QEM, curvature weighting, quality guard | Included | Retained alongside advanced paths |
-| Viewer, presets, inspection, single-result exports | Included | Retained in the product source |
-| Daily local usage limits | None | Hosted usage is a separate policy |
-| Learned edge importance and topology-aware stages | Not included | Advanced engine source |
-| Brush refinement and multi-LOD packages | Not included | Advanced workflow source |
-| Marketing website and cloud storage | Not included | Maintained in the separate Pro repository |
-| Billing, teams, managed API and batch jobs | Not included | Planned hosted-product work |
-
-Pro is a separate codebase. A feature being present in its source does not mean it is already available as a paid service.
-
 ## Limitations
 
 - **Static meshes:** rigging and animations are not preserved.
@@ -202,7 +190,7 @@ For a change, open a branch, keep the patch focused, run the checks above, and s
 
 ## Repository activity
 
-These badges read live repository data. Their values reflect this Community repository, including its fresh history, rather than earlier development elsewhere.
+These badges read live repository data. Their values reflect this repository, including its fresh history, rather than earlier development elsewhere.
 
 <p>
   <a href="https://github.com/Lesgo-HQ/Crunch3D/commits/main/"><img alt="Latest commit" src="https://img.shields.io/github/last-commit/Lesgo-HQ/Crunch3D?style=flat-square&amp;color=F26522&amp;labelColor=242424" /></a>
@@ -214,16 +202,23 @@ These badges read live repository data. Their values reflect this Community repo
 
 ## Team
 
-Crunch3D is built and maintained by these four contributors. This team list is curated, so it is not limited to the authors visible in the new Git history.
+Crunch3D is built and maintained by these four contributors. The small profile links below are our core team. New contributors appear in the contribution gallery as their commits are credited on GitHub.
 
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/anish-9387"><img src="https://github.com/anish-9387.png?size=120" width="80" height="80" alt="anish-9387" /><br /><sub><b>anish-9387</b></sub></a></td>
-    <td align="center"><a href="https://github.com/itzsouravkumar"><img src="https://github.com/itzsouravkumar.png?size=120" width="80" height="80" alt="itzsouravkumar" /><br /><sub><b>itzsouravkumar</b></sub></a></td>
-    <td align="center"><a href="https://github.com/aashisoni000"><img src="https://github.com/aashisoni000.png?size=120" width="80" height="80" alt="aashisoni000" /><br /><sub><b>aashisoni000</b></sub></a></td>
-    <td align="center"><a href="https://github.com/itzayush18"><img src="https://github.com/itzayush18.png?size=120" width="80" height="80" alt="itzayush18" /><br /><sub><b>itzayush18</b></sub></a></td>
-  </tr>
-</table>
+<p>
+  <a href="https://github.com/anish-9387" title="anish-9387"><img src="./assets/team/anish-9387.svg" width="56" height="56" alt="anish-9387" /></a>
+  <a href="https://github.com/itzsouravkumar" title="itzsouravkumar"><img src="./assets/team/itzsouravkumar.svg" width="56" height="56" alt="itzsouravkumar" /></a>
+  <a href="https://github.com/aashisoni000" title="aashisoni000"><img src="./assets/team/aashisoni000.svg" width="56" height="56" alt="aashisoni000" /></a>
+  <a href="https://github.com/itzayush18" title="itzayush18"><img src="./assets/team/itzayush18.svg" width="56" height="56" alt="itzayush18" /></a>
+</p>
+
+### Everyone who contributes
+
+<a href="https://github.com/Lesgo-HQ/Crunch3D/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Lesgo-HQ/Crunch3D&amp;max=100&amp;columns=12" alt="GitHub contributors to Crunch3D" />
+</a>
+
+The gallery is generated from GitHub contribution data by [contrib.rocks](https://contrib.rocks). It refreshes automatically, subject to service caching. [See all contributors](https://github.com/Lesgo-HQ/Crunch3D/graphs/contributors).
+
 
 ## License
 

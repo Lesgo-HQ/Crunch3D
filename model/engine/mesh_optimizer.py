@@ -9,7 +9,7 @@ Architecture:
     → Trimesh  (merge all components back)
     → output_file
 
-Community edition: curvature-weighted QEM and sampled quality checks.
+Local optimizer: curvature-weighted QEM and sampled quality checks.
 """
 
 from __future__ import annotations

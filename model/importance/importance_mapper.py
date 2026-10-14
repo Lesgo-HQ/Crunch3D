@@ -1,4 +1,4 @@
-"""Curvature-only importance for the community optimizer."""
+"""Curvature-only importance for the local optimizer."""
 import numpy as np
 from .curvature import compute_curvature_importance
 

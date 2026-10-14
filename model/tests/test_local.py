@@ -1,4 +1,4 @@
-"""Community release contract and real mesh smoke tests."""
+"""Local API contract and synthetic mesh checks."""
 from pathlib import Path
 
 import numpy as np
@@ -27,7 +27,7 @@ def client(tmp_path, monkeypatch):
     routes.jobs.clear()
 
 
-def test_free_api_surface_and_rejects_premium_options(client):
+def test_api_surface_and_rejects_unknown_options(client):
     paths = client.get('/openapi.json').json()['paths']
     assert set(paths) == {
         '/api/upload', '/api/optimize', '/api/status/{job_id}',
@@ -35,7 +35,7 @@ def test_free_api_surface_and_rejects_premium_options(client):
         '/api/download/{job_id}', '/api/job/{job_id}', '/health',
     }
     result = client.post('/api/optimize', json={
-        'job_id': 'a' * 12, 'target_faces': 100, 'generate_lods': True,
+        'job_id': 'a' * 12, 'target_faces': 100, 'unknown_option': True,
     })
     assert result.status_code == 422
 
@@ -68,7 +68,7 @@ def test_upload_optimize_preview_and_unlimited_download(client):
 def test_invalid_mesh_and_size_limit(client, monkeypatch):
     assert client.post('/api/upload', files={'file': ('bad.exe', b'bad')}).status_code == 400
     assert client.post('/api/upload', files={'file': ('bad.obj', b'bad')}).status_code == 422
-    monkeypatch.setattr(routes, 'MAX_FILE_SIZE_MB', 0)
+    monkeypatch.setattr(routes, 'MAX_FILE_SIZE_MB', 0.000001)
     assert client.post('/api/upload', files={'file': ('big.obj', b'v 0 0 0')}).status_code == 413
     assert list(file_handler.UPLOAD_DIR.iterdir()) == []
     assert client.get('/api/status/not-a-job').status_code == 404
@@ -101,3 +101,11 @@ def test_textured_glb_export(tmp_path):
     assert stats.face_count == len(mesh.faces)
     assert loaded.visual.kind == 'texture'
     assert meta['texture_export_info']['texture_preserved']
+
+
+def test_zero_size_limit_allows_upload(client, monkeypatch):
+    monkeypatch.setattr(routes, 'MAX_FILE_SIZE_MB', 0)
+    # Tiny generated OBJ; no large files or real model assets are needed.
+    mesh = trimesh.creation.box().export(file_type='obj')
+    response = client.post('/api/upload', files={'file': ('box.obj', mesh)})
+    assert response.status_code == 200, response.text

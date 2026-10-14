@@ -1,16 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650" viewBox="0 0 1100 650" role="img" aria-labelledby="title desc">
-<title id="title">Crunch3D Community architecture</title>
+<title id="title">Crunch3D local architecture</title>
 <desc id="desc">Read from top to bottom. Orange arrows show the optimization flow; a return arrow shows the sampled quality retry loop.</desc>
 <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 Z" fill="#F26522"/></marker></defs>
 <rect width="1100" height="650" rx="24" fill="#171717"/>
-<text x="40" y="46" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#FFF4EB">CRUNCH3D / COMMUNITY</text>
-<text x="40" y="75" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#D6C8BE">Local processing. No account or daily download quota.</text>
+<rect x="24" y="94" width="1052" height="483" rx="18" fill="none" stroke="#867163" stroke-dasharray="6 5"/>
+<text x="40" y="46" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#FFF4EB">CRUNCH3D / YOUR COMPUTER</text>
+<text x="40" y="75" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="400" fill="#D6C8BE">Everything below runs on your computer. No cloud processing.</text>
 <rect x="40" y="110" width="480" height="100" rx="14" fill="#FFF4EB" stroke="#F26522" stroke-width="1.5"/>
-<text x="60" y="139" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#242424">01  Browser</text>
+<text x="60" y="139" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#242424">01  Browser / localhost:5173</text>
 <text x="60" y="165" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#3D3834">React + Vite + Three.js</text>
 <text x="60" y="186" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#3D3834">Upload / presets / compare / inspect</text>
 <rect x="580" y="110" width="480" height="100" rx="14" fill="#FFF4EB" stroke="#F26522" stroke-width="1.5"/>
-<text x="600" y="139" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#242424">02  FastAPI</text>
+<text x="600" y="139" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#242424">02  Local API / 127.0.0.1:8000</text>
 <text x="600" y="165" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#3D3834">Validated requests and job state</text>
 <text x="600" y="186" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#3D3834">Local upload, optimize and file endpoints</text>
 <path d="M520 160 H580" fill="none" stroke="#F26522" stroke-width="2" marker-end="url(#arrow)"/>
@@ -20,7 +21,7 @@
 <text x="60" y="335" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#E4DAD2">Curvature scores from mesh geometry</text>
 <text x="60" y="356" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#E4DAD2">Weight important vertices</text>
 <rect x="390" y="280" width="320" height="100" rx="14" fill="#262626" stroke="#F26522" stroke-width="1.5"/>
-<text x="410" y="309" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#FF9B63">04  Geometry worker</text>
+<text x="410" y="309" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#FF9B63">04  Local worker process</text>
 <text x="410" y="335" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#E4DAD2">PyMeshLab weighted QEM</text>
 <text x="410" y="356" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#E4DAD2">Normal / boundary preservation</text>
 <rect x="740" y="280" width="320" height="100" rx="14" fill="#262626" stroke="#F26522" stroke-width="1.5"/>
@@ -33,7 +34,7 @@
 <text x="600" y="414" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" fill="#FF9B63">Retry within configured targets</text>
 <path d="M1040 380 V460" fill="none" stroke="#F26522" stroke-width="2" marker-end="url(#arrow)"/>
 <rect x="580" y="460" width="480" height="100" rx="14" fill="#262626" stroke="#F26522" stroke-width="1.5"/>
-<text x="600" y="489" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#FF9B63">06  Storage and export</text>
+<text x="600" y="489" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#FF9B63">06  Your disk and export</text>
 <text x="600" y="515" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#E4DAD2">Local uploads / results / metadata</text>
 <text x="600" y="536" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" fill="#E4DAD2">Single result, textured output as GLB</text>
 <rect x="40" y="460" width="480" height="100" rx="14" fill="#262626" stroke="#F26522" stroke-width="1.5"/>

@@ -1078,7 +1078,7 @@ input[type="range"] {
 
 /* ─────────────────────────────────────────────────────────────────────────────
    PRELOADER
-   Premium fullscreen loading screen with wireframe cube + progress bar.
+   Fullscreen loading screen with wireframe cube + progress bar.
    The inline preloader in index.html uses the same class names so there's
    zero flicker when React hydrates.
    ───────────────────────────────────────────────────────────────────────────── */

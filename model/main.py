@@ -1,4 +1,4 @@
-"""Crunch3D Community — local mesh optimization."""
+"""Crunch3D — local mesh optimization."""
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -9,7 +9,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .api.routes import router
 
-app = FastAPI(title="Crunch3D Community API", version="1.0.0")
+app = FastAPI(title="Crunch3D API", version="1.0.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[x.strip() for x in os.getenv(
@@ -23,4 +23,4 @@ app.include_router(router)
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "edition": "community", "storage": "local"}
+    return {"status": "ok", "storage": "local"}

@@ -1,4 +1,4 @@
-"""Local community API: upload, inspect, optimize and export a single mesh."""
+"""Local API: upload, inspect, optimize and export a single mesh."""
 import asyncio
 import functools
 import json
@@ -24,7 +24,7 @@ from ..engine.mesh_optimizer import decimate_mesh, resolve_output_extension
 router = APIRouter(prefix="/api", tags=["mesh"])
 logger = logging.getLogger(__name__)
 jobs = {}
-MAX_FILE_SIZE_MB = int(os.getenv("MAX_FILE_SIZE_MB", "50"))
+MAX_FILE_SIZE_MB = int(os.getenv("MAX_FILE_SIZE_MB", "0"))
 PRESET_TARGETS = {
     "tiny_ui": 8000, "decorative_bg": 25000, "hero_standard": 70000,
     "interactive_model": 100000, "multi_scene": 220000, "mobile_hero": 45000,
@@ -72,7 +72,7 @@ async def upload_model(file: UploadFile = File(...)):
         with path.open("wb") as output:
             while chunk := await file.read(1024 * 1024):
                 size += len(chunk)
-                if size > MAX_FILE_SIZE_MB * 1024 * 1024:
+                if MAX_FILE_SIZE_MB > 0 and size > MAX_FILE_SIZE_MB * 1024 * 1024:
                     raise HTTPException(413, f"Local upload limit: {MAX_FILE_SIZE_MB} MB")
                 output.write(chunk)
         stats = await asyncio.to_thread(analyze_mesh, path)
