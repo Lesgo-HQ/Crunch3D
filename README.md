@@ -12,6 +12,7 @@
 </div>
 
 <p align="center">
+  <a href="./LICENSE"><img alt="License: GPL-3.0-only" src="https://img.shields.io/badge/license-GPL--3.0--only-F26522?style=for-the-badge&amp;labelColor=242424" /></a>
   <a href="https://github.com/Lesgo-HQ/Crunch3D/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
   <a href="https://github.com/Lesgo-HQ/Crunch3D/forks"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
   <a href="https://github.com/Lesgo-HQ/Crunch3D/issues"><img alt="Open issues" src="https://img.shields.io/github/issues/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
@@ -186,7 +187,9 @@ The tests use tiny generated meshes. You do not need a large model collection to
 
 Found a mesh that behaves unexpectedly? Open an issue with the file format, target count, preservation settings, and a small reproduction you have permission to share. Include the error message and your Python and operating-system versions.
 
-For a change, open a branch, keep the patch focused, run the checks above, and submit a pull request describing the behavior before and after. Please discuss large algorithm or format changes in an issue first.
+Start with the [contribution guide](CONTRIBUTING.md) for setup, checks, review, and licensing expectations. Please discuss large algorithm or format changes in an issue first.
+
+[Code of conduct](CODE_OF_CONDUCT.md) · [Security policy](SECURITY.md) · [Get help](SUPPORT.md) · [Maintainers](MAINTAINERS.md)
 
 ## Repository activity
 
@@ -222,7 +225,9 @@ The gallery is generated from GitHub contribution data by [contrib.rocks](https:
 
 ## License
 
-A project license has not been selected yet. This repository is publicly readable, but it does not currently grant an open-source license. Dependency licenses still apply. A compatible license needs to be added before the project can be described as fully open source.
+Crunch3D's original code and documentation are licensed under **GNU GPL version 3 only (`GPL-3.0-only`)**. You can use, study, modify, and redistribute the software, including commercially, under its terms. Covered distributed modifications must remain under GPLv3, with the required corresponding source. There is no warranty.
+
+Read the full [license](LICENSE), [copyright and asset exceptions](COPYRIGHT.md), and [third-party dependency notices](THIRD_PARTY_NOTICES.md). Contributors retain copyright to their work. Processing a mesh does not automatically place that mesh or its output under GPL.
 
 ## Contact
 

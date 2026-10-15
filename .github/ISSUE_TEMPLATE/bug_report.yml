@@ -1,0 +1,33 @@
+name: Bug report
+description: Report a reproducible problem with the local application.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: Do not disclose vulnerabilities here. Read SECURITY.md. Only attach files you have permission to publish.
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Describe the actual result and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include file format, face target, preservation settings, and a tiny synthetic example if possible.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include commit or version, operating system, Python, Node, browser, and relevant dependency versions.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Remove secrets, private paths, and personal data before sharing.
