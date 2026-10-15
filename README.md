@@ -5,6 +5,7 @@
   <h1>Crunch3D</h1>
   <p>Fewer polygons. More room to build.</p>
   <p>
+    <a href="#demo">Watch demo</a> ·
     <a href="#getting-started">Get started</a> ·
     <a href="#system-architecture">Architecture</a> ·
     <a href="#team">Meet the team</a>
@@ -17,6 +18,16 @@
   <a href="https://github.com/Lesgo-HQ/Crunch3D/forks"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
   <a href="https://github.com/Lesgo-HQ/Crunch3D/issues"><img alt="Open issues" src="https://img.shields.io/github/issues/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
 </p>
+
+## Demo
+
+See Crunch3D in action. Click the preview to open the demo video.
+
+[![Crunch3D demo showing a mesh in the local optimizer](./assets/branding/demo-preview.png)](https://github.com/Lesgo-HQ/Crunch3D/blob/main/assets/branding/crunch3d-demo.mp4)
+
+[Watch the demo](https://github.com/Lesgo-HQ/Crunch3D/blob/main/assets/branding/crunch3d-demo.mp4) · [Download the video](https://raw.githubusercontent.com/Lesgo-HQ/Crunch3D/main/assets/branding/crunch3d-demo.mp4)
+
+The recording shows an earlier interface, including controls that are not available in this release. The feature list below describes what this repository supports.
 
 <details>
   <summary>Table of contents</summary>

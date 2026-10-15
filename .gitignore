@@ -36,3 +36,6 @@ model/data/usage.db-wal
 model/data/
 .pytest_cache/
 *.bundle
+
+# Keep the original demo locally; publish the smaller web copy.
+/assets/branding/Crunch3d demo.mp4
