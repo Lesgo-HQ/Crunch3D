@@ -13,7 +13,7 @@
 </div>
 
 <p align="center">
-  <a href="./LICENSE"><img alt="License: GPL-3.0-only" src="https://img.shields.io/badge/license-GPL--3.0--only-F26522?style=for-the-badge&amp;labelColor=242424" /></a>
+  <a href="./LICENSE"><img alt="License: GNU GPL v3" src="https://img.shields.io/badge/license-GPLv3-F26522?style=for-the-badge&amp;labelColor=242424" /></a>
   <a href="https://github.com/Lesgo-HQ/Crunch3D/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
   <a href="https://github.com/Lesgo-HQ/Crunch3D/forks"><img alt="GitHub forks" src="https://img.shields.io/github/forks/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
   <a href="https://github.com/Lesgo-HQ/Crunch3D/issues"><img alt="Open issues" src="https://img.shields.io/github/issues/Lesgo-HQ/Crunch3D?style=for-the-badge&amp;color=F26522&amp;labelColor=242424&amp;cacheSeconds=300&amp;v=2" /></a>
@@ -236,7 +236,7 @@ The gallery is generated from GitHub contribution data by [contrib.rocks](https:
 
 ## License
 
-Crunch3D's original code and documentation are licensed under **GNU GPL version 3 only (`GPL-3.0-only`)**. You can use, study, modify, and redistribute the software, including commercially, under its terms. Covered distributed modifications must remain under GPLv3, with the required corresponding source. There is no warranty.
+Crunch3D's original code and documentation are licensed under **GNU General Public License v3.0**. You can use, study, modify, and redistribute the software, including commercially, under its terms. Covered distributed modifications must remain under GPLv3, with the required corresponding source. There is no warranty.
 
 Read the full [license](LICENSE), [copyright and asset exceptions](COPYRIGHT.md), and [third-party dependency notices](THIRD_PARTY_NOTICES.md). Contributors retain copyright to their work. Processing a mesh does not automatically place that mesh or its output under GPL.
 
